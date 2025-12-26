@@ -9,6 +9,7 @@ import {
 } from "typeorm";
 import { IntegrationAppTypeEnum } from "./integration.entity.js";
 import { User } from "./user.entity.js";
+import { Meeting } from "./meeting.entity.js";
 
 
 export enum EventLocationEnumType {
@@ -42,8 +43,8 @@ export class Event {
     @ManyToOne(() => User, (user) => user.events)
     user: User;
 
-    //   @OneToMany(() => Meeting, (meeting) => meeting.event)
-    //   meetings: Meeting[];
+    @OneToMany(() => Meeting, (meeting) => meeting.event)
+    meetings: Meeting[];
 
     @CreateDateColumn()
     createdAt: Date;

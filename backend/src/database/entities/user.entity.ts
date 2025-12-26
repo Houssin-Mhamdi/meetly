@@ -3,6 +3,7 @@ import { compareValue, hashValue } from "../../utils/bcrypt.js";
 import { Integration } from "./integration.entity.js";
 import { Event } from "./event.entity.js";
 import { Availability } from "./availability.entity.js";
+import { Meeting } from "./meeting.entity.js";
 
 @Entity({ name: "users" })
 export class User {
@@ -45,6 +46,11 @@ export class User {
     })
     @JoinColumn()
     availability: Availability;
+
+    @OneToMany(() => Meeting, (meeting) => meeting.user, {
+        cascade: true,
+    })
+    meetings: Meeting[];
     @CreateDateColumn()
     createdAt: Date;
 
