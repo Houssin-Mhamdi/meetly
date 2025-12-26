@@ -1,12 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "db:generate": "npm run typeorm -- migration:generate src/database/migrations/CreateTables -d src/config/database.config.ts",
+    "db:migrate": "npm run typeorm -- migration:run -d src/config/database.config.ts",
+    "db:revert": "npm run typeorm -- migration:revert -d src/config/database.config.ts",
+    "db:drop": "npm run typeorm -- schema:drop -d src/config/database.config.ts",
     "start": "node dist/index.js",
-    "dev": "node --loader ts-node/esm --watch src/index.ts",
-    "build": "tsc &&  cp ./package.json ./dist",
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc && cp ./package.json ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -35,10 +39,12 @@
     "@types/cors": "^2.8.19",
     "@types/dotenv-webpack": "^7.0.8",
     "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.3",
     "@types/passport": "^1.0.17",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "typeorm-ts-node-commonjs": "^0.3.20",
     "typescript": "^5.9.3"
   }
 }

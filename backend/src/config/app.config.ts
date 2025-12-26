@@ -1,4 +1,4 @@
-import { getEnv } from "../utils/get-env.js";
+import { getEnv } from "../utils/get-env";
 
 const appConfig = () => ({
     PORT: getEnv('PORT', '8000'),

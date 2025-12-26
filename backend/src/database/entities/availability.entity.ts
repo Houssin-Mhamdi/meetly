@@ -7,8 +7,8 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from "typeorm";
-import { User } from "./user.entity.js";
-import { DayAvailability } from "./day-availability.js";
+import { User } from "./user.entity";
+import { DayAvailability } from "./day-availability.entity";
 
 
 @Entity()

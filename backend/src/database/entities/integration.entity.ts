@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { User } from "./user.entity.js";
+import { User } from "./user.entity";
 
 
 export enum IntegrationProviderEnum {

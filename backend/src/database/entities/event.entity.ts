@@ -7,9 +7,9 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from "typeorm";
-import { IntegrationAppTypeEnum } from "./integration.entity.js";
-import { User } from "./user.entity.js";
-import { Meeting } from "./meeting.entity.js";
+import { IntegrationAppTypeEnum } from "./integration.entity";
+import { User } from "./user.entity";
+import { Meeting } from "./meeting.entity";
 
 
 export enum EventLocationEnumType {

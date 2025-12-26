@@ -6,8 +6,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { User } from "./user.entity.js";
-import { Event } from "./event.entity.js";
+import { User } from "./user.entity";
+import { Event } from "./event.entity";
 
 
 export enum MeetingStatus {
